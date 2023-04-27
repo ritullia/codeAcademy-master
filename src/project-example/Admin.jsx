@@ -109,7 +109,6 @@ export const Admin = () => {
                 id="disabledTextInput"
                 class="form-control"
                 placeholder=""
-                step={0.01}
                 onChange={handleOnChange}
               />
             </div>

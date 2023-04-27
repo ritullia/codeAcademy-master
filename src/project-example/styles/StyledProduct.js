@@ -5,7 +5,7 @@ export const Card = styled.div`
   width: 270px;
   background-color: #f0efef;
   border-radius: 5px;
-  cursor: pointer; 
+  cursor: pointer;
 `;
 
 export const Container = styled.div`
@@ -20,7 +20,19 @@ export const Container = styled.div`
 export const CardImage = styled.img`
   width: 270px;
   height: 170px;
-  margin-top: 40px
+  margin-top: 40px;
+`;
+export const FilterDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+  height: 170px;
+  margin: 10px auto 40px;
+  align-items: center;
+  justify-content: center;
+`;
+export const FilterInput = styled.input`
+  width: 300px;
 `;
 
 export const Price = styled.div`

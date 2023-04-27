@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ProductItem } from "./ProductItem";
-import { Container } from "./styles/StyledProduct";
+import { Container, FilterDiv, FilterInput } from "./styles/StyledProduct";
 import { Modal, Button } from "react-bootstrap";
 import { Toast } from "../components/Toast";
 
@@ -44,9 +44,10 @@ export const ProductList = () => {
 
   return (
     <>
-      <div>
-        <input onBlur={onhandleChange} />
-      </div>
+      <FilterDiv>
+        <label>Filter</label>
+        <FilterInput onBlur={onhandleChange} />
+      </FilterDiv>
       <Container>
         {products
           ?.filter((product) => product.title.toLowerCase().includes(filter))
