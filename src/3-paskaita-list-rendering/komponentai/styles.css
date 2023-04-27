@@ -1,0 +1,9 @@
+
+.student-card-div {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.student-card-paragraph {
+    color: red
+}
