@@ -17,6 +17,18 @@ const storeReducer = (state, action) => {
         total: action.payload,
       };
 
+    case "deleteProduct":
+      return {
+        ...state,
+        products: action.payload,
+      };
+
+    case "updateNewPrice":
+      return {
+        ...state,
+        total: action.payload,
+      };
+
     default:
       throw Error("Cannot match case in storeReducer");
   }

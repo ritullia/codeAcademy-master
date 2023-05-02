@@ -16,6 +16,7 @@ const StoreWrapper = ({ children }) => {
     //updatetBasket = [{product}]
 
     updateTotalPrice(updatedBasket);
+    updateTotalPriceAfter(updatedBasket);
 
     dispatch({
       type: "add",
@@ -23,10 +24,24 @@ const StoreWrapper = ({ children }) => {
     });
   };
 
+  //remove product function
+
+  const deleteProductFromBasket = (product) => {
+    // console.log("cia ", product);
+    const someProducts = state.products.filter(
+      (currentProduct) => product.id !== currentProduct.id
+    );
+
+    dispatch({
+      type: "deleteProduct",
+      payload: someProducts,
+    });
+  };
+
   const updateTotalPrice = (products) => {
     let total = 0;
     products.forEach((product) => {
-      total += product.price;
+      total += Number(product.price);
     });
 
     dispatch({
@@ -34,10 +49,27 @@ const StoreWrapper = ({ children }) => {
       payload: total,
     });
   };
+  const updateTotalPriceAfter = (products) => {
+    let updateTotal = state.total;
+    console.log(state.total);
+    products.forEach((product) => {
+      updateTotal -= Number(product.price);
+    });
+
+    dispatch({
+      type: "updateNewPrice",
+      payload: updateTotal,
+    });
+  };
 
   return (
     <StoreContext.Provider
-      value={{ total: state.total, products: state.products, addToBasket }}
+      value={{
+        total: state.total,
+        products: state.products,
+        addToBasket,
+        deleteProductFromBasket,
+      }}
     >
       {children}
     </StoreContext.Provider>
