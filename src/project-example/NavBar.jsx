@@ -33,6 +33,9 @@ export const NavBar = ({ isLoading, onLogout }) => {
             <li>
               <Link to="/admin">Admin</Link>
             </li>
+            <li>
+              <Link to="/basket">Cart</Link>
+            </li>
           </>
         ) : (
           <>

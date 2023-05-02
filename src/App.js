@@ -22,6 +22,7 @@ import { Admin } from "./project-example/Admin";
 import { Posts } from "./project-example/posts/Posts";
 import { Post } from "./project-example/posts/Post";
 import { Comments } from "./project-example/posts/Comments";
+import { Basket } from "./project-example/Basket";
 import { IndexPost } from "./project-example/posts/IndexPost";
 import React, { createContext, useState, useContext } from "react";
 import Protected from "./project-example/Protected";
@@ -72,6 +73,7 @@ function App() {
           <Route path="/products" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/basket" element={<Basket />} />
         </Route>
 
         <Route element={<Protected />}>

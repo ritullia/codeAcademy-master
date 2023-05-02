@@ -13,7 +13,6 @@ export const Admin = () => {
     stock: "",
     discountPercentage: "",
     price: "",
-    rating: "",
   });
 
   const navigate = useNavigate();
@@ -70,7 +69,7 @@ export const Admin = () => {
                 name="title"
                 type="text"
                 class="form-control"
-                placeholder=""
+                placeholder="Title"
                 onChange={handleOnChange}
               />
             </div>
@@ -82,7 +81,7 @@ export const Admin = () => {
                 name="description"
                 type="text"
                 class="form-control"
-                placeholder=""
+                placeholder="Description"
                 onChange={handleOnChange}
               />
             </div>
@@ -94,7 +93,7 @@ export const Admin = () => {
                 type="number"
                 name="price"
                 class="form-control"
-                placeholder=""
+                placeholder="Price"
                 step={0.01}
                 onChange={handleOnChange}
               />
@@ -108,11 +107,11 @@ export const Admin = () => {
                 name="discountPercentage"
                 id="disabledTextInput"
                 class="form-control"
-                placeholder=""
+                placeholder="Discount"
                 onChange={handleOnChange}
               />
             </div>
-            <div class="mb-3">
+            {/* <div class="mb-3">
               <label for="disabledTextInput" class="form-label">
                 Rating
               </label>
@@ -125,7 +124,7 @@ export const Admin = () => {
                 step={0.01}
                 onChange={handleOnChange}
               />
-            </div>
+            </div> */}
             <div class="mb-3">
               <label for="disabledTextInput" class="form-label">
                 Stock
@@ -134,7 +133,7 @@ export const Admin = () => {
                 name="stock"
                 type="number"
                 class="form-control"
-                placeholder=""
+                placeholder="Stock"
                 step={0}
                 onChange={handleOnChange}
               />
@@ -148,7 +147,7 @@ export const Admin = () => {
                 type="text"
                 id="disabledTextInput"
                 class="form-control"
-                placeholder=""
+                placeholder="Brand"
                 onChange={handleOnChange}
               />
             </div>
@@ -161,7 +160,7 @@ export const Admin = () => {
                 type="text"
                 id="disabledTextInput"
                 class="form-control"
-                placeholder=""
+                placeholder="Category"
                 onChange={handleOnChange}
               />
             </div>
@@ -174,7 +173,7 @@ export const Admin = () => {
                 name="thumbnail"
                 id="disabledTextInput"
                 class="form-control"
-                placeholder=""
+                placeholder="Image url"
                 onChange={handleOnChange}
               />
             </div>

@@ -6,13 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter } from "react-router-dom";
 import { AuthenticationWrapper } from "./project-example/AuthenticationContext";
+import StoreWrapper from "./project-example/reducerForBasket/StoreContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthenticationWrapper>
-        <App />
+        <StoreWrapper>
+          <App />
+        </StoreWrapper>
       </AuthenticationWrapper>
     </BrowserRouter>
   </React.StrictMode>
