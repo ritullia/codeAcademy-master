@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { ProductItem } from "./ProductItem";
 import { Container, FilterDiv, FilterInput } from "./styles/StyledProduct";
 import { Modal, Button } from "react-bootstrap";
@@ -41,6 +41,18 @@ export const ProductList = () => {
       });
   }, []);
 
+  const mappedProducts = useMemo(() => {
+    return products
+      ?.filter((product) => product.title.toLowerCase().includes(filter))
+      .map((product) => (
+        <ProductItem
+          key={product.id}
+          product={product}
+          onClick={handleProductClick}
+        />
+      ));
+  }, [products, filter]);
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -51,17 +63,7 @@ export const ProductList = () => {
         <label>Filter</label>
         <FilterInput onBlur={onhandleChange} />
       </FilterDiv>
-      <Container>
-        {products
-          ?.filter((product) => product.title.toLowerCase().includes(filter))
-          .map((product) => (
-            <ProductItem
-              key={product.id}
-              product={product}
-              onClick={handleProductClick}
-            />
-          ))}
-      </Container>
+      <Container>{mappedProducts}</Container>
 
       <Toast
         show={!!addedToCartProduct}
