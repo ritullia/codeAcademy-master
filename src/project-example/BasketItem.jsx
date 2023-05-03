@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { StoreContext } from "./reducerForBasket/StoreContext";
 
 export const BasketItem = ({ item }) => {
-  const { deleteProductFromBasket } = useContext(StoreContext);
+  const { removeItem } = useContext(StoreContext);
+  const handleRemoveItem = () => {
+    removeItem(item.id);
+  };
   return (
     <>
       <div
@@ -20,9 +23,7 @@ export const BasketItem = ({ item }) => {
         </div>
       </div>
       <div>
-        <button onClick={() => deleteProductFromBasket(item)}>
-          Delete product
-        </button>
+        <button onClick={handleRemoveItem}>Remove item</button>
       </div>
     </>
   );
