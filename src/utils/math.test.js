@@ -18,5 +18,12 @@ describe("math.js", () => {
     });
   });
 
-  describe("sub", () => {});
+  describe("sub", () => {
+    test.each([
+      [5, 2, 3],
+      [6, 4, 2],
+    ])("adds %p - %p and returns %p", (a, b, result) => {
+      expect(sub(a, b)).toBe(result);
+    });
+  });
 });
