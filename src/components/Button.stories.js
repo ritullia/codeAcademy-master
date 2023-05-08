@@ -3,12 +3,13 @@ import { Button } from "./Button";
 export default {
   title: "Button",
   component: Button,
+  argTypes: {
+    onClick: { action: "clicked" },
+  },
 };
 
 export const ButtonComponent = {
   args: {
-    text: "NUMBER ",
-    onClick: true,
-    backgroundColor: "#6e0e0e",
+    children: "NUMBER ",
   },
 };

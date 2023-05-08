@@ -1,11 +1,7 @@
 import { useState } from "react";
 
-export const Button = ({ onClick, text }) => {
-  const [click, setClick] = useState(false);
-
-  const handleOnClick = () => {
-    setClick(text);
-  };
+export const Button = ({ onClick, children }) => {
+  // const [click, setClick] = useState(false);
 
   return (
     <>
@@ -15,11 +11,11 @@ export const Button = ({ onClick, text }) => {
           borderRadius: "10px",
           width: "180px",
           border: "1px solid ",
+          height: "40px",
         }}
-        onClick={handleOnClick}
+        onClick={onClick}
       >
-        {text}
-        {click}
+        {children}
       </button>
     </>
   );
