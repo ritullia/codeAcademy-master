@@ -1,4 +1,4 @@
-import { sum, sub } from "./math";
+import { sum, sub, getArrSum } from "./math";
 
 //bendros funkcijos failo irasymas
 describe("math.js", () => {
@@ -24,6 +24,12 @@ describe("math.js", () => {
       [6, 4, 2],
     ])("adds %p - %p and returns %p", (a, b, result) => {
       expect(sub(a, b)).toBe(result);
+    });
+  });
+
+  describe("getArrSum", () => {
+    test.each([[[1, 2, 3], 6]])("returns arr %p sum %p", (arr, result) => {
+      expect(getArrSum(arr)).toBe(result);
     });
   });
 });
